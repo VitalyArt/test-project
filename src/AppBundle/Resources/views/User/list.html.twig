@@ -1,0 +1,28 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-refresh"></i>
+                    </span>
+                    <h5>Users list</h5>
+                </div>
+                <div class="widget-content nopadding updates">
+                    {% for user in users %}
+                        <div class="new-update clearfix">
+                            <i class="icon-ok-sign"></i>
+                            <div class="update-done">
+                                <strong>{{ user.username }}</strong>
+                                <span>{{ user.email }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

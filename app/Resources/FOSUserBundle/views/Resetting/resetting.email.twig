@@ -1,0 +1,15 @@
+{% block subject %}{{ 'password_resetting'|trans({}, 'email') }}{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+{{ 'hello'|trans({}, 'email') }}!
+
+{{ 'follow_to_reset'|trans({}, 'email') }}: {{ confirmationUrl }}
+
+{{ 'team_sign'|trans({}, 'email')|raw }}
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% include 'IntaroCrmSiteBundle:EmailModern:resetting.html.twig' %}
+{% endblock %}

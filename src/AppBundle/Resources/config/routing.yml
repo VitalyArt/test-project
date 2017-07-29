@@ -1,0 +1,48 @@
+app_main_index:
+    path:     /
+    defaults:
+        _controller: AppBundle:Main:index
+
+app_event_my:
+    path:     /event/my
+    defaults:
+        _controller: AppBundle:Event:my
+
+app_event_create:
+    path:     /event/create
+    defaults:
+        _controller: AppBundle:Event:create
+
+app_event_view:
+    path:  /event/{id}
+    defaults:
+        _controller: AppBundle:Event:view
+    requirements:
+        id: \d+
+
+app_event_edit:
+    path:  /event/{id}/edit
+    defaults:
+        _controller: AppBundle:Event:edit
+    requirements:
+        id: \d+
+
+app_user_list:
+    path:     /user
+    defaults:
+        _controller: AppBundle:User:list
+
+app_api_events:
+    path: /api/events/
+    defaults:
+        _controller: AppBundle:Api:events
+    requirements:
+        start: \d+
+        end: \d+
+
+app_api_event_edit:
+    path: /api/events/{id}/edit
+    defaults:
+        _controller: AppBundle:Api:eventEdit
+    requirements:
+        id: \d+

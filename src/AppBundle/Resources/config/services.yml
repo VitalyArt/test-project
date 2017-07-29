@@ -1,0 +1,19 @@
+services:
+    app.admin.event:
+        class: AppBundle\Admin\EventAdmin
+        arguments: [~, AppBundle\Entity\Event, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Event }
+        public: true
+
+    app.admin.event_status:
+        class: AppBundle\Admin\EventStatusAdmin
+        arguments: [~, AppBundle\Entity\EventStatus, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: EventStatus }
+
+    app.admin.user:
+        class: AppBundle\Admin\UserAdmin
+        arguments: [~, AppBundle\Entity\User, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: User }

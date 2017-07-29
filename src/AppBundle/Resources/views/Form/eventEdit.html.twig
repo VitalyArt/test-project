@@ -1,0 +1,49 @@
+<form action="{{ path('app_event_edit', {'id': app.request.get('id')}) }}" method="post" class="form-horizontal">
+    {{ form_errors(form) }}
+
+    {{ form_errors(form.name) }}
+    <div class="control-group">
+        <label class="control-label">Name :</label>
+        <div class="controls">
+            {{ form_widget(form.name, { 'attr': { 'class': 'span4' } }) }}
+        </div>
+    </div>
+
+    {{ form_errors(form.date) }}
+    <div class="control-group">
+        <label class="control-label">Date :</label>
+        <div class="controls">
+            {{ form_widget(form.date, { 'attr': { 'class': 'span12' } }) }}
+        </div>
+    </div>
+
+    {{ form_errors(form.color) }}
+    <div class="control-group">
+        <label class="control-label">Color :</label>
+        <div class="controls">
+            {{ form_widget(form.color, { 'attr': { 'class': 'colorpicker input-big span4' } }) }}
+        </div>
+    </div>
+
+    {{ form_errors(form.description) }}
+    <div class="control-group">
+        <label class="control-label">Description :</label>
+        <div class="controls">
+            {{ form_widget(form.description, { 'attr': { 'class': 'span11' } }) }}
+        </div>
+    </div>
+
+    {{ form_errors(form.status) }}
+    <div class="control-group">
+        <label class="control-label">Status :</label>
+        <div class="controls">
+            {{ form_widget(form.status, { 'attr': { 'class': 'span11' } }) }}
+        </div>
+    </div>
+
+    {{ form_rest(form) }}
+    <div class="form-actions">
+        <input type="submit" name="submit" value="Save" class="btn btn-success">
+        <a class="btn btn-danger" href="{{ path('app_event_my') }}">Cancel</a>
+    </div>
+</form>
