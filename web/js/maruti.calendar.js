@@ -53,7 +53,7 @@ maruti = {
             },
             eventDrop: function(event, delta, revertFunc) {
                 $.ajax({
-                    url: '/app_dev.php/api/events/' + event.id + '/edit',
+                    url: '/api/events/' + event.id + '/edit',
                     type: 'POST',
                     data: 'year=' + event.start.getFullYear() + '&month=' + event.start.getMonth() + '&day=' + event.start.getDate(),
                     success: function (result) {
@@ -61,7 +61,7 @@ maruti = {
                 });
             },
             eventClick: function(calEvent, jsEvent, view) {
-                var url = '/app_dev.php/event/' + calEvent.id;
+                var url = '/event/' + calEvent.id;
 
                 $.ajax({
                     url: url,
@@ -85,7 +85,7 @@ maruti = {
 
             },
             events: {
-                url: '/app_dev.php/api/events/',
+                url: '/api/events/',
                 type: 'POST',
                 error: function() {
                     alert('there was an error while fetching events!');
